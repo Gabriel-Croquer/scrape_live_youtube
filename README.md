@@ -16,6 +16,8 @@ I scraped the live again, and reached to 500 new comments. But they weren't actu
 
 (treemap)
 
+(fazer um scrolly)
+
 
 (mostrar sua análise dos vídeos repetidos)
 
