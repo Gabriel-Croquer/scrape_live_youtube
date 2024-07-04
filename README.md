@@ -1,4 +1,4 @@
-# scrape_live_youtube
+## The army of robots helping to promote the "Fortune Tiger" scam on Brazil
 
 In a report I did for my company, I started to investigate the authomatization of comments in YouTube lives and videos promoting an online slot machine called "Fortune Tiger", a game causing addiction in thousands of people — some of them very poor, believing the game could guarantee them easy money, but in reality it drains the few money these people have.   
 
