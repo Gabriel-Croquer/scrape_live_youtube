@@ -14,7 +14,7 @@ In one of this lives I found this wednesday  (3), I scraped 500 comments in  15 
 
 I scraped the live again, and reached to 500 new comments. But they weren't actually new. They were also repeated as hell. 
 
-(another treemap)
+<div class="flourish-embed flourish-word-cloud" data-src="visualisation/18623441"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
 Ok... So we have robots commenting on lives. 
 
@@ -24,13 +24,11 @@ But something crazy I noticed when looking at commentaries on very popular footb
 
 But now, again, I scraped the replies from comments in the video and found a lot of botish answers. 
 
-(nuvem de palavras) 
+<div class="flourish-embed flourish-word-cloud" data-src="visualisation/18623637"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
-There was a "fella", profile named "margo2308", that actually wrote 233 replies. Is he someone who likes to debate a lot on footbal videos? No, he's just another bot passing by, and replying a lot to inflate the scammer comments. 
+There was a "fella", profile named "margo2308", that actually wrote 233 replies. Is he someone who likes to debate a lot on footbal videos? No, it's just another bot passing by, and replying a lot to inflate the scammer comments. 
 (arte do "margo2308") 
 
 
 
-
-
-(fazer análise dos comentários hitadíssimos em vídeos de futebol)
+## Be aware of bots!
