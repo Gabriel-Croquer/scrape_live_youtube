@@ -10,7 +10,7 @@ The problem is people that search for "Fortune Tiger" to check if the game is tr
 
 In one of this lives I found this wednesday  (3), I scraped 500 comments in  15 minutes. In this period, the message "this platform is very good" appeared 22 times, posted by 9 two different accounts, and 29 authors published comments. 
 
-(treemap Flourish) 
+<div class="flourish-embed flourish-word-cloud" data-src="visualisation/18623441"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
 I scraped the live again, and reached to 500 new comments. But they weren't actually new. They were also repeated as hell. 
 
