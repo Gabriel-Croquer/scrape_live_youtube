@@ -160,52 +160,38 @@
         </figure>
     </div>
     <div class="content">
-
-
         <p>But now, again, I scraped the replies from comments in the video and found a lot of botish answers.</p>
         <div class="flourish-embed flourish-word-cloud" data-src="visualisation/18630992"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
         <p>There was a "fella", profile named "margo2308", that actually wrote 233 replies. Is he someone who likes to debate a lot on footbal videos? No, it's just another bot passing by, and replying a lot to inflate the scammer comments.</p>
-     </div>
-  <section id="scrolly-video" class="scrolly-container">
+    </div>
+  <section id="scrolly-images" class="scrolly-container">
     <div class="sticky-thing">
+      <img src="image1.jpg">
     </div>
     <div class="steps-container">
-      <div class="step" id="step-first">
-        <p>You will have to use VS Code's <strong>Live Server</strong> extension to do this locally. Once you've
-          installed it, right-click the filename on the left-panel and select "Open with Live Server".</p>
+      <div class="step" id="step1">
+        <div>
+          <p>Step one, adjust the CSS at the bottom of this page to change spacing between steps.</p>
+          <p>Here is some more text, in case there are multiple paragraphs.</p>
+        </div>
       </div>
-      <div class="step" id="step-second">
-        <p>To find more details about how this is done, check out <a
-            href="https://github.com/dkaoster/scrolly-video">scrolly-video</a>.</p>
+      <div class="step" id="step2">
+        <p>Find the JavaScript code near the bottom to associate each step with an image change.</p>
       </div>
-      <div class="step" id="step-third">
-        <p>Step three.</p>
+      <div class="step" id="step3">
+        <p>By default, the steps are a set width and the text is left-centered. Find the rule in
+          <code>scrolly-styles.css</code> that refers to <code>.step > *</code> to adjust or remove the width, center
+          the text, or change the background color/opacity.
+        </p>
       </div>
-      <div class="step" id="step-fourth">
-        <p>Step four.</p>
+      <div class="step" id="step4">
+        <p>Step four, lorem ipsum dolor sic amet.</p>
       </div>
-      <div class="step" id="step-fifth">
-        <p>Step five.</p>
+      <div class="step" id="step5">
+        <p>Step five, lorem ipsum dolor sic amet.</p>
       </div>
     </div>
-  </section>
-new ScrollyVideo({
-      scrollyVideoContainer: document.querySelector("#scrolly-video .sticky-thing"),
-      src: "HANYU_desktop.mp4",
-      full: true,
-      // cover: true
-    });
-  </script>
-  <style>
-    .step {
-      height: 100vh;
-      margin-bottom: 0;
-    }
-
-    /* .sticky-thing > canvas {
-      object-fit: cover;
-    } */
-  </style>        
+  </section>         
 
 </body>
 
