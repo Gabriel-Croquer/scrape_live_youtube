@@ -119,6 +119,7 @@
         <div class="byline">
             <p>By <a href="https://g1.globo.com/autores/gabriel-croquer/">Gabriel Croquer</a></p>
         </div>
+        
         <p>In a <a href="https://g1.globo.com/tecnologia/noticia/2024/07/04/lives-de-jogo-do-tigrinho-surgem-em-canais-de-youtube-sobre-culinaria-e-jogos-infantis.ghtml"> report I did for my company</a>, I started to investigate the authomatization of comments in YouTube lives and videos promoting an online slot machine called "Fortune Tiger", 
             a game causing addiction in thousands of people — some of them very poor, believing the game could guarantee them easy money,
             but in reality it drains the few money these people have.</p>
@@ -151,7 +152,7 @@
         <p>But something crazy I noticed when looking at commentaries on very popular footbal videos
             -- not lives, actually published videos -- is that there seem to be bots liking like and commenting another comment,
             that says: "How to do 100 to 1000 a day!!!!", and, further in the replies, links to the "Fortune Tiger" fraud.</p>
-        <h1>Let's take a visual look at these bots!</h1>
+        <h3>Let's take a look at these bots!</h3>
     <div class="full-width">
         <figure>
             <video src="video_coment.mp4" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
@@ -164,7 +165,47 @@
         <p>But now, again, I scraped the replies from comments in the video and found a lot of botish answers.</p>
         <div class="flourish-embed flourish-word-cloud" data-src="visualisation/18630992"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
         <p>There was a "fella", profile named "margo2308", that actually wrote 233 replies. Is he someone who likes to debate a lot on footbal videos? No, it's just another bot passing by, and replying a lot to inflate the scammer comments.</p>
+     </div>
+  <section id="scrolly-video" class="scrolly-container">
+    <div class="sticky-thing">
+    </div>
+    <div class="steps-container">
+      <div class="step" id="step-first">
+        <p>You will have to use VS Code's <strong>Live Server</strong> extension to do this locally. Once you've
+          installed it, right-click the filename on the left-panel and select "Open with Live Server".</p>
+      </div>
+      <div class="step" id="step-second">
+        <p>To find more details about how this is done, check out <a
+            href="https://github.com/dkaoster/scrolly-video">scrolly-video</a>.</p>
+      </div>
+      <div class="step" id="step-third">
+        <p>Step three.</p>
+      </div>
+      <div class="step" id="step-fourth">
+        <p>Step four.</p>
+      </div>
+      <div class="step" id="step-fifth">
+        <p>Step five.</p>
+      </div>
+    </div>
+  </section>
+new ScrollyVideo({
+      scrollyVideoContainer: document.querySelector("#scrolly-video .sticky-thing"),
+      src: "HANYU_desktop.mp4",
+      full: true,
+      // cover: true
+    });
+  </script>
+  <style>
+    .step {
+      height: 100vh;
+      margin-bottom: 0;
+    }
 
+    /* .sticky-thing > canvas {
+      object-fit: cover;
+    } */
+  </style>        
 
 </body>
 
