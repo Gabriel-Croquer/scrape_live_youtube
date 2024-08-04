@@ -152,6 +152,10 @@
       </div>
     </div>
   </section>
+  <!-- Add audio element -->
+  <audio id="background-audio" src="your-audio-file.mp3" preload="auto"></audio>
+
+  <script src="scripts.js"></script>
   <div class="content">
     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
       aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
@@ -212,6 +216,42 @@
       full: true,
       // cover: true
     });
+    document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('background-audio');
+  const steps = document.querySelectorAll('.step');
+  let isPlaying = false;
+
+  const playAudio = () => {
+    if (!isPlaying) {
+      audio.play();
+      isPlaying = true;
+    }
+  };
+
+  const pauseAudio = () => {
+    if (isPlaying) {
+      audio.pause();
+      isPlaying = false;
+    }
+  };
+
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY + window.innerHeight;
+
+    for (let i = 0; i < steps.length; i++) {
+      const step = steps[i];
+      const stepTop = step.offsetTop;
+      const stepBottom = stepTop + step.offsetHeight;
+
+      if (scrollPosition > stepTop && scrollPosition < stepBottom) {
+        playAudio();
+        return; // Exit loop early
+      }
+    }
+
+    pauseAudio();
+  });
+});
   </script>
   <style>
     .step {
