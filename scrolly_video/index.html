@@ -126,7 +126,7 @@
       I'll never forget the feeling that I've had after lots of hours watching stupid stuff there: a brain shrunked and dumbed down, eager to get out of social media junkie cycle.<p/> 
     <p>I think we've all been into this. But YouTube also helped me to learn and watch lot of things very important to me: guitar, coding, journalism, football matches, jiu-jitsu.</p>
     <p>Liking it or not, the fact is the app is part of shaping a relevant part of me. 
-    <p>Google knows that and tracks everything I do. So I've downloaded all my Youtube history since 2018, year I created an account, to discover more about myself and how (if) I've changed since then. oi</p>
+    <p>Google knows that and tracks everything I do. So I've downloaded all my Youtube history since 2018, year I created an account, to discover more about myself and how (if) I've changed since then. hello</p>
    
   </div>
   <section id="scrolly-video" class="scrolly-container">
@@ -217,25 +217,27 @@
     });
 // scripts.js
 
+// scripts.js
+
 document.addEventListener('DOMContentLoaded', () => {
   const audio = document.getElementById('background-audio');
   const steps = document.querySelectorAll('.step');
   const audioSegments = {
-    'step-first': [0, 4], // [startTime, endTime] in seconds
-    'step-second': [5, 7],
-    'step-third': [8, 9],
-    'step-fourth': [10, 13],
+    'step-first': [0, 10], // [startTime, endTime] in seconds
+    'step-second': [10, 20],
+    'step-third': [20, 30],
+    'step-fourth': [30, 40],
     'step-fifth': [40, 50]
   };
 
-  let currentStep = null;
+  let currentSegment = null;
+  let isPlaying = false;
 
   const playAudioSegment = (startTime, endTime) => {
     audio.currentTime = startTime;
     audio.play().catch(error => {
       console.error('Audio playback was prevented:', error);
     });
-    // Stop audio when the end time is reached
     const checkEndTime = setInterval(() => {
       if (audio.currentTime >= endTime) {
         audio.pause();
@@ -244,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
   };
 
-  window.addEventListener('scroll', () => {
+  const handleScroll = () => {
     const scrollPosition = window.scrollY + window.innerHeight;
 
     for (let i = 0; i < steps.length; i++) {
@@ -254,17 +256,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (scrollPosition > stepTop && scrollPosition < stepBottom) {
         const stepId = step.id;
-        if (currentStep !== stepId) {
-          currentStep = stepId;
-          const [startTime, endTime] = audioSegments[stepId] || [0, 0];
+        const [startTime, endTime] = audioSegments[stepId] || [0, 0];
+
+        if (currentSegment !== stepId) {
+          currentSegment = stepId;
+
+          if (isPlaying) {
+            audio.pause();
+            isPlaying = false;
+          }
+
           playAudioSegment(startTime, endTime);
+          isPlaying = true;
         }
         return; // Exit loop early
       }
     }
-  });
-});
 
+    // Pause audio if no step is in view
+    if (isPlaying) {
+      audio.pause();
+      isPlaying = false;
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  // Initial check in case the user starts on a specific step
+  handleScroll();
+});
+ 
   </script>
   <style>
     .step {
