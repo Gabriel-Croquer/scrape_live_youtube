@@ -152,7 +152,8 @@
       </div>
     </div>
   </section>
-  <audio id="background-audio" src="audio.mp3" preload="auto" loop></audio>
+    <!-- Add audio element -->
+  <audio id="background-audio" src="your-audio-file.mp3" preload="auto"></audio>
   <script src="scripts.js"></script>
   <div class="content">
     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
@@ -214,19 +215,49 @@
       full: true,
       // cover: true
     });
-  document.addEventListener('DOMContentLoaded', () => {
+// scripts.js
+document.addEventListener('DOMContentLoaded', () => {
   const audio = document.getElementById('background-audio');
+  const steps = document.querySelectorAll('.step');
+  const audioSegments = {
+    'step-first': [0, 10], // [startTime, endTime] in seconds
+    'step-second': [10, 20],
+    'step-third': [20, 30],
+    'step-fourth': [30, 40],
+    'step-fifth': [40, 50]
+  };
 
-  // Start playing the audio as soon as the page is loaded
-  audio.play().catch(error => {
-    // Handle cases where the browser may prevent auto-play
-    console.error('Audio playback was prevented:', error);
-  });
+  let currentStep = null;
+  let isPlaying = false;
 
-  // Optional: Pause or adjust audio based on scroll position if needed
+  const playAudioSegment = (startTime, endTime) => {
+    audio.currentTime = startTime;
+    audio.play();
+    setTimeout(() => {
+      if (audio.currentTime >= endTime) {
+        audio.pause();
+      }
+    }, (endTime - startTime) * 1000);
+  };
+
   window.addEventListener('scroll', () => {
-    // Adjust playback based on scrolling if necessary
-    // For instance, you might want to handle mute/unmute or volume changes
+    const scrollPosition = window.scrollY + window.innerHeight;
+
+    for (let i = 0; i < steps.length; i++) {
+      const step = steps[i];
+      const stepTop = step.offsetTop;
+      const stepBottom = stepTop + step.offsetHeight;
+
+      if (scrollPosition > stepTop && scrollPosition < stepBottom) {
+        const stepId = step.id;
+        if (currentStep !== stepId) {
+          currentStep = stepId;
+          const [startTime, endTime] = audioSegments[stepId] || [0, 0];
+          playAudioSegment(startTime, endTime);
+        }
+        return; // Exit loop early
+      }
+    }
   });
 });
   </script>
