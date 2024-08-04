@@ -152,9 +152,7 @@
       </div>
     </div>
   </section>
-  <!-- Add audio element -->
-  <audio id="background-audio" src="audio.mp3" preload="auto"></audio>
-
+  <audio id="background-audio" src="audio.mp3" preload="auto" loop></audio>
   <script src="scripts.js"></script>
   <div class="content">
     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
@@ -216,40 +214,19 @@
       full: true,
       // cover: true
     });
-    document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
   const audio = document.getElementById('background-audio');
-  const steps = document.querySelectorAll('.step');
-  let isPlaying = false;
 
-  const playAudio = () => {
-    if (!isPlaying) {
-      audio.play();
-      isPlaying = true;
-    }
-  };
+  // Start playing the audio as soon as the page is loaded
+  audio.play().catch(error => {
+    // Handle cases where the browser may prevent auto-play
+    console.error('Audio playback was prevented:', error);
+  });
 
-  const pauseAudio = () => {
-    if (isPlaying) {
-      audio.pause();
-      isPlaying = false;
-    }
-  };
-
+  // Optional: Pause or adjust audio based on scroll position if needed
   window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY + window.innerHeight;
-
-    for (let i = 0; i < steps.length; i++) {
-      const step = steps[i];
-      const stepTop = step.offsetTop;
-      const stepBottom = stepTop + step.offsetHeight;
-
-      if (scrollPosition > stepTop && scrollPosition < stepBottom) {
-        playAudio();
-        return; // Exit loop early
-      }
-    }
-
-    pauseAudio();
+    // Adjust playback based on scrolling if necessary
+    // For instance, you might want to handle mute/unmute or volume changes
   });
 });
   </script>
