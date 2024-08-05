@@ -105,21 +105,35 @@
         padding-left: 0.5em;
         padding-right: 0.5em;
       }
-      .video-wrapper {
+      body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent scrollbars if not needed */
+        }
+
+        /* Container for centering content */
+        .video-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* or any specific height you need */
-            width: 100%;   /* or any specific width you need */
-            background-color: #f0f0f0; /* Optional: to make the video stand out */
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 10; /* Ensure it is above other content if needed */
+            height: 100vh; /* Full viewport height */
+            width: 100vw;  /* Full viewport width */
+            position: relative; /* Ensure it's positioned relative to the viewport */
+            background-color: #f0f0f0; /* Optional background color */
         }
-        .video-wrapper video {
-            max-width: 100%;
-            height: auto;
+
+        /* Video styling */
+        video {
+            max-width: 100%; /* Ensures the video fits within the container */
+            height: auto;    /* Maintains aspect ratio */
+        }
+
+        /* Optional figcaption styling */
+        figcaption {
+            margin-top: 10px; /* Space between video and caption */
+            color: #333; /* Caption text color */
+            text-align: center; /* Center caption text */
         }
     }
   </style>
@@ -187,16 +201,11 @@
     
 </head>
   <div class="video-wrapper">
-    <figure>
-            <video src="dance_fat_guy.mp4" preload="auto" tabindex="0" playsinline autoplay loop controls></video>
+        <figure style="text-align: center;">
+            <video src="dance_fat_guy.mp4" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
             <figcaption>You see? The amount of replies with no meaning at all to the main comment promoting "Fortune Tiger".</figcaption>
         </figure>
-    </div>
-
-</body>    
-
-
-    
+    </div>      
     <figure>
       <img
         src="https://static01.nyt.com/images/2024/02/01/multimedia/01eu-hungary-orban-2-ghkw/01eu-hungary-orban-2-ghkw-superJumbo.jpg?quality=75&auto=webp">
