@@ -105,6 +105,22 @@
         padding-left: 0.5em;
         padding-right: 0.5em;
       }
+      .video-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* or any specific height you need */
+            width: 100%;   /* or any specific width you need */
+            background-color: #f0f0f0; /* Optional: to make the video stand out */
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10; /* Ensure it is above other content if needed */
+        }
+        .video-wrapper video {
+            max-width: 100%;
+            height: auto;
+        }
     }
   </style>
   <link href="scrolly-styles.css" rel="stylesheet">
@@ -170,11 +186,13 @@
     made Youtube create the YouTube shortz.</p>
     
 </head>
-<body style="margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #f0f0f0;">
-    <figure style="text-align: center;">
-        <video src="dance_fat_guy.mp4" preload="auto" tabindex="0" playsinline autoplay loop controls style="max-width: 100%; height: auto;"></video>
-        <figcaption>You see? The amount of replies with no meaning at all to the main comment promoting "Fortune Tiger".</figcaption>
-    </figure>
+  <div class="video-wrapper">
+    <figure>
+            <video src="dance_fat_guy.mp4" preload="auto" tabindex="0" playsinline autoplay loop controls></video>
+            <figcaption>You see? The amount of replies with no meaning at all to the main comment promoting "Fortune Tiger".</figcaption>
+        </figure>
+    </div>
+
 </body>    
 
 
