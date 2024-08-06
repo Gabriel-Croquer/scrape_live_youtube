@@ -189,7 +189,7 @@
     </div>
   </section>
     <!-- Add audio element -->
-  <audio id="background-audio" src="audio.mp3" preload="auto"></audio>
+  <audio id="background-audio" src="audio-1.mp3" preload="auto"></audio>
   <script src="scripts.js"></script>
     <div class="content">
     <p>Yeah, YouTube data shows that I watched more and more videos over the years gone by.</p>
@@ -252,11 +252,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const audio = document.getElementById('background-audio');
   const steps = document.querySelectorAll('.step');
   const audioSegments = {
-    'step-first': [0, 10], // [startTime, endTime] in seconds
-    'step-second': [10, 20],
+    'step-first': [0, 15], // [startTime, endTime] in seconds
+    'step-second': [15, 19],
     'step-third': [20, 30],
-    'step-fourth': [30, 40],
-    'step-fifth': [40, 50]
+    'step-fourth': [31, 50],
+    'step-fifth': [31, 50]
   };
 
   let currentSegment = null;
