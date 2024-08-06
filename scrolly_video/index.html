@@ -157,7 +157,9 @@
     <p>I think we've all been into this. But YouTube also helped me to learn and watch lot of things very important to me: guitar, coding, journalism, football matches, jiu-jitsu.</p>
     <p>Liking it or not, the fact is the app shaped a relevant part of me. 
     <p>Google knows that and tracks everything I do. So I've downloaded all my Youtube history since 2018, year I created an account, to discover more about myself and how (if) I've changed since then. hello</p>
-   
+   <!-- Button to play the audio -->
+    <button onclick="playAudio()">Play Audio</button>
+
   </div>
   <section id="scrolly-video" class="scrolly-container">
     <div class="sticky-thing">
@@ -189,7 +191,7 @@
     <!-- Add audio element -->
   <audio id="background-audio" src="audio.mp3" preload="auto"></audio>
   <script src="scripts.js"></script>
-  <div class="content">
+    <div class="content">
     <p>Yeah, YouTube data shows that I watched more and more videos over the years gone by.</p>
     <p>I truly imagine I would watch less videos getting older and having to work. Got little disappointed learning it is the other way around.</p>
     <iframe title="Ammount of videos watched by month" aria-label="Table" id="datawrapper-chart-crzs9" src="https://datawrapper.dwcdn.net/crzs9/1/" scrolling="yes" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="481" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
@@ -310,7 +312,12 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll);
   // Initial check in case the user starts on a specific step
   handleScroll();
+  function playAudio() {
+            var audio = document.getElementById('myAudio');
+            audio.play();
+        }
 });
+    
  
   </script>
   <style>
